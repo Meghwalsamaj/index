@@ -18,14 +18,12 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bg); min-height: 100vh; font-family: 'Poppins', sans-serif; color: var(--text); }
 
-    /* LOADER */
     #appLoader { position:fixed; inset:0; background:var(--header-bg); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
     #appLoader h2 { color:#fff; font-family:'Tiro Devanagari Hindi',serif; font-size:1.3rem; }
     #appLoader p  { color:#c5d5f7; font-size:0.82rem; }
     .spinner { width:40px; height:40px; border:4px solid rgba(255,255,255,0.2); border-top-color:#fff; border-radius:50%; animation:spin 0.8s linear infinite; }
     @keyframes spin { to{transform:rotate(360deg)} }
 
-    /* MODAL */
     .modal-overlay { display:none; position:fixed; inset:0; background:rgba(26,35,64,0.55); z-index:999; align-items:center; justify-content:center; padding:16px; }
     .modal-overlay.show { display:flex; }
     .modal-box { background:#fff; border-radius:18px; border:1.5px solid var(--border); box-shadow:0 8px 40px rgba(30,60,120,0.18); padding:26px 22px 20px; width:100%; max-width:360px; text-align:center; animation:popIn 0.3s ease; }
@@ -39,14 +37,12 @@
     .btn-primary:hover { opacity:0.88; }
     .btn-primary:disabled { opacity:0.4; cursor:not-allowed; }
 
-    /* PIN */
     #pinInput { width:100%; padding:11px 14px; border-radius:10px; border:1.5px solid var(--border); background:#f4f6fb; color:var(--text); font-size:1.4rem; letter-spacing:10px; text-align:center; font-family:'Poppins',sans-serif; outline:none; transition:border 0.2s; margin-bottom:8px; }
     #pinInput:focus { border-color:var(--accent); }
     #pinInput:disabled { opacity:0.5; cursor:not-allowed; }
     #pinError { font-size:0.78rem; min-height:20px; margin-bottom:8px; color:var(--expense); }
     #lockMsg  { font-size:0.8rem; color:var(--expense); font-weight:600; margin-bottom:8px; min-height:20px; }
 
-    /* WA MODAL */
     #waModal .modal-box { max-width:380px; text-align:left; }
     #waModal h2, #waModal p { text-align:center; }
     .wa-rasid-box { background:#f0fdf5; border:1px solid #a7f3c0; border-radius:10px; padding:12px 14px; font-size:0.82rem; color:#166534; line-height:1.7; margin-bottom:14px; font-family:monospace; white-space:pre-wrap; max-height:280px; overflow-y:auto; }
@@ -55,14 +51,12 @@
     .btn-wa-cancel { width:100%; padding:9px; border:1.5px solid var(--border); border-radius:10px; background:#f4f6fb; color:var(--subtext); font-size:0.85rem; font-weight:600; cursor:pointer; }
     .btn-wa-cancel:hover { border-color:var(--expense); color:var(--expense); }
 
-    /* ADMIN CORNER */
     #adminCornerTab { position:fixed; bottom:18px; right:18px; z-index:900; }
     .corner-btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); padding:8px 16px; border-radius:22px; font-size:0.78rem; font-weight:700; cursor:pointer; box-shadow:0 4px 16px rgba(26,86,219,0.15); transition:0.2s; display:flex; align-items:center; gap:6px; }
     .corner-btn:hover { background:var(--accent); color:#fff; }
     .corner-btn.admin-active { background:var(--income-bg); border-color:var(--income); color:var(--income); }
     .corner-btn.admin-active:hover { background:var(--income); color:#fff; }
 
-    /* HEADER */
     header { background:var(--header-bg); padding:18px 20px 14px; text-align:center; position:relative; box-shadow:0 2px 12px rgba(26,86,219,0.15); }
     header h1 { font-family:'Tiro Devanagari Hindi',serif; font-size:1.4rem; font-weight:700; color:#fff; }
     header p  { font-size:0.78rem; color:#c5d5f7; margin-top:3px; }
@@ -70,14 +64,8 @@
     .mode-badge.admin  { background:#fff; color:var(--accent); }
     .mode-badge.viewer { background:#e8f4f0; color:var(--income); }
 
-    /* SYNC STATUS */
-    #syncBar { max-width:720px; margin:10px auto 0; padding:0 14px; }
-    #syncMsg { font-size:0.75rem; text-align:center; padding:6px 12px; border-radius:8px; font-weight:600; }
-    #syncMsg.ok      { background:#eafaf1; color:var(--income); }
-    #syncMsg.loading { background:#eaf2ff; color:var(--accent); }
-    #syncMsg.error   { background:#fdf0ef; color:var(--expense); }
 
-    /* SUMMARY */
+
     .summary { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding:12px 14px 0; max-width:720px; margin:0 auto; }
     .sum-card { background:var(--card); border-radius:14px; padding:12px 8px; text-align:center; border:1.5px solid var(--border); box-shadow:var(--shadow); }
     .sum-card .label { font-size:0.65rem; color:var(--subtext); font-weight:600; text-transform:uppercase; letter-spacing:1px; }
@@ -86,11 +74,8 @@
     .sum-card.expense .amount { color:var(--expense); }
     .sum-card.balance .amount { color:var(--accent); }
 
-    /* VIEWER NOTICE */
-    .viewer-notice { max-width:720px; margin:10px auto 0; padding:0 14px; }
-    .viewer-notice div { background:#eaf2ff; border:1px solid #b3d0ff; border-radius:10px; padding:8px 14px; font-size:0.78rem; color:var(--accent); text-align:center; }
 
-    /* TABS */
+
     .main-tabs { max-width:720px; margin:12px auto 0; padding:0 14px; display:flex; border-radius:14px 14px 0 0; overflow:hidden; border:1.5px solid var(--border); border-bottom:none; }
     .main-tab { flex:1; padding:11px 10px; text-align:center; font-size:0.9rem; font-weight:700; cursor:pointer; transition:0.2s; background:#f0f4ff; color:var(--subtext); border:none; outline:none; }
     .main-tab.active-income  { background:var(--income-bg); color:var(--income);  border-bottom:3px solid var(--income); }
@@ -99,7 +84,6 @@
     .tab-content { max-width:720px; margin:0 auto; padding:0 14px; display:none; }
     .tab-content.active { display:block; }
 
-    /* FORM */
     .form-card { background:var(--card); border-radius:0 0 14px 14px; padding:16px 14px; border:1.5px solid var(--border); border-top:none; box-shadow:var(--shadow); margin-bottom:12px; }
     .form-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
     .form-row.full { grid-template-columns:1fr; }
@@ -113,11 +97,9 @@
     .btn-add:hover { opacity:0.88; }
     .btn-add:disabled { opacity:0.5; cursor:not-allowed; }
 
-    /* SEARCH */
     .search-bar { margin-bottom:10px; }
     .search-bar input { background:#fff; }
 
-    /* LIST */
     .tx-list { display:flex; flex-direction:column; gap:8px; }
     .tx-item { background:var(--card); border-radius:12px; padding:10px 12px; border:1.5px solid var(--border); display:flex; align-items:center; gap:10px; box-shadow:var(--shadow); animation:fadeIn 0.25s ease; }
     @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
@@ -126,7 +108,7 @@
     .tx-icon.income  { background:var(--income-bg); }
     .tx-icon.expense { background:var(--expense-bg); }
     .tx-info { flex:1; min-width:0; }
-    .tx-desc { font-size:0.85rem; font-weight:600; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .tx-desc { font-size:0.85rem; font-weight:600; color:var(--text); white-space:normal; word-break:break-word; }
     .tx-meta { font-size:0.7rem; color:var(--subtext); margin-top:2px; }
     .tx-amount { font-size:0.95rem; font-weight:700; flex-shrink:0; }
     .tx-amount.income  { color:var(--income); }
@@ -138,7 +120,6 @@
     .tx-delete:hover { color:var(--expense); }
     .empty { text-align:center; color:var(--subtext); padding:28px 0; font-size:0.9rem; }
 
-    /* PAGINATION */
     .pagination { display:flex; justify-content:center; align-items:center; gap:6px; margin:14px 0 80px; flex-wrap:wrap; }
     .pg-btn { padding:6px 12px; border-radius:8px; border:1.5px solid var(--border); background:#fff; color:var(--subtext); font-size:0.82rem; font-weight:600; cursor:pointer; transition:0.2s; min-width:36px; }
     .pg-btn:hover { border-color:var(--accent); color:var(--accent); }
@@ -146,9 +127,8 @@
     .pg-btn:disabled { opacity:0.35; cursor:not-allowed; }
     .pg-info { font-size:0.75rem; color:var(--subtext); padding:0 4px; }
 
-    /* REPORT */
     .report-bar { max-width:720px; margin:0 auto 20px; padding:0 14px; }
-    .report-bar button { width:100%; padding:11px; border:none; border-radius:10px; font-size:0.87rem; font-weight:700; cursor:pointer; background:#374151; color:white; }
+    .report-bar button { width:auto; display:block; margin:0 auto; padding:8px 28px; border:none; border-radius:10px; font-size:0.82rem; font-weight:700; cursor:pointer; background:#374151; color:white; }
     .report-bar button:hover { opacity:0.88; }
 
     @media(max-width:480px){
@@ -161,14 +141,12 @@
 </head>
 <body>
 
-<!-- LOADER -->
 <div id="appLoader">
   <div class="spinner"></div>
   <h2>मेघवाल समाज दसौरिया, गरोठ</h2>
   <p>डेटा लोड हो रहा है...</p>
 </div>
 
-<!-- ADMIN PIN MODAL -->
 <div class="modal-overlay" id="adminModal">
   <div class="modal-box">
     <h2>🔐 Admin Login</h2>
@@ -183,7 +161,6 @@
   </div>
 </div>
 
-<!-- WA MODAL -->
 <div class="modal-overlay" id="waModal">
   <div class="modal-box">
     <h2>📲 WhatsApp रसीद</h2>
@@ -197,43 +174,35 @@
   </div>
 </div>
 
-<!-- HEADER -->
 <header>
   <h1>मेघवाल समाज दसौरिया, गरोठ</h1>
   <p>समाज कार्यक्रम फण्ड मैनेजर</p>
   <div class="mode-badge viewer" id="modeBadge">👁️ VIEWER</div>
 </header>
 
-<!-- SYNC BAR -->
-<div id="syncBar"><div id="syncMsg" class="ok">✅ Google Sheet से connected</div></div>
 
-<!-- SUMMARY -->
+
 <div class="summary">
   <div class="sum-card income"><div class="label">कुल आय</div><div class="amount" id="totalIncome">₹0</div></div>
   <div class="sum-card expense"><div class="label">कुल व्यय</div><div class="amount" id="totalExpense">₹0</div></div>
   <div class="sum-card balance"><div class="label">शेष राशि</div><div class="amount" id="balance">₹0</div></div>
 </div>
 
-<!-- VIEWER NOTICE -->
-<div class="viewer-notice" id="viewerNotice">
-  <div>👁️ Viewer Mode — नीचे 🔐 Admin बटन से login करें</div>
-</div>
 
-<!-- TABS -->
+
 <div class="main-tabs">
   <button class="main-tab active-income"  id="tab-income"  onclick="switchTab('income')">✅ आय <span id="inc-count"></span></button>
   <button class="main-tab"               id="tab-expense" onclick="switchTab('expense')">❌ व्यय <span id="exp-count"></span></button>
 </div>
 
-<!-- INCOME TAB -->
 <div class="tab-content active" id="content-income">
   <div class="form-card" id="incFormCard" style="display:none">
     <div class="form-row">
       <div><label>तारीख</label><input type="date" id="inc-date"/></div>
-      <div><label>राशि (₹)</label><input type="number" id="inc-amount" placeholder="जैसे: 5000" min="1"/></div>
+      <div><label>राशि (₹)</label><input type="number" id="inc-amount" placeholder="जैसे: 5000" min="1" max="10000000"/></div>
     </div>
     <div class="form-row full">
-      <div><label>विवरण</label><input type="text" id="inc-desc" placeholder="जैसे: वार्षिक उत्सव दान"/></div>
+      <div><label>विवरण</label><input type="text" id="inc-desc" placeholder="जैसे: वार्षिक उत्सव दान" maxlength="200"/></div>
     </div>
     <button class="btn-add income-btn" id="incAddBtn" onclick="addEntry('income')">✅ आय जोड़ें</button>
   </div>
@@ -242,15 +211,14 @@
   <div class="pagination" id="inc-pagination"></div>
 </div>
 
-<!-- EXPENSE TAB -->
 <div class="tab-content" id="content-expense">
   <div class="form-card" id="expFormCard" style="display:none">
     <div class="form-row">
       <div><label>तारीख</label><input type="date" id="exp-date"/></div>
-      <div><label>राशि (₹)</label><input type="number" id="exp-amount" placeholder="जैसे: 2000" min="1"/></div>
+      <div><label>राशि (₹)</label><input type="number" id="exp-amount" placeholder="जैसे: 2000" min="1" max="10000000"/></div>
     </div>
     <div class="form-row full">
-      <div><label>विवरण</label><input type="text" id="exp-desc" placeholder="जैसे: पूजा सामग्री खरीद"/></div>
+      <div><label>विवरण</label><input type="text" id="exp-desc" placeholder="जैसे: पूजा सामग्री खरीद" maxlength="200"/></div>
     </div>
     <button class="btn-add expense-btn" id="expAddBtn" onclick="addEntry('expense')">❌ व्यय जोड़ें</button>
   </div>
@@ -261,7 +229,6 @@
 
 <div class="report-bar"><button onclick="printReport()">🖨️ Print Report</button></div>
 
-<!-- ADMIN CORNER -->
 <div id="adminCornerTab">
   <button class="corner-btn" id="cornerBtn" onclick="cornerBtnClick()">
     🔐 <span id="cornerLabel">Admin Login</span>
@@ -270,43 +237,47 @@
 
 <script>
   // ===== CONFIG =====
-  const ADMIN_PIN     = '7328';
-  const SHEET_URL     = 'https://script.google.com/macros/s/AKfycbzUYcqbH5NKHjJoMof3TBAgODzC2os-iEZ9EQR4hg7bH0WoprwNIDmbY3SBQT2tYAQI/exec';
-  const PAGE_SIZE     = 50;
-  const MAX_ATTEMPTS  = 5;
-  const LOCK_DURATION = 5 * 60 * 1000;
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyHFf3iVHd8ryxt1QJ9DfWJoLiAOlU_cgBaIp5G0IK7zY21Ti5eRlzTojZqPb6vHACb/exec';
+  const SECRET_TOKEN = 'mgw_secret_2026'; // Same as Apps Script
+  const PAGE_SIZE = 50;
+  const MAX_ATTEMPTS = 5;
 
   let currentMode = 'viewer';
+  let sessionToken = null; // Token mila server se login ke baad
   let entries = [];
   let pendingWAEntry = null;
   let pages = { income:1, expense:1 };
   let isSaving = false;
+  let lockTimer = null;
 
-  // ===== SYNC STATUS =====
-  function syncStatus(type, msg){
-    const el = document.getElementById('syncMsg');
-    el.className = type; el.textContent = msg;
+  // ===== XSS PROTECTION =====
+  function esc(str) {
+    return String(str).replace(/[&<>"']/g, m => ({
+      '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+    })[m]);
   }
 
+
+
   // ===== LOAD FROM SHEET =====
-  async function loadFromSheet(){
+  async function loadFromSheet() {
     try {
-      syncStatus('loading','⏳ डेटा लोड हो रहा है...');
-      const res = await fetch(SHEET_URL);
+      
+      const res = await fetch(`${SHEET_URL}?token=${SECRET_TOKEN}`);
       const data = await res.json();
+      if(data.error) throw new Error(data.error);
       entries = data.map(r=>({
-        id: Number(r.id),
+        id: String(r.id),
         type: r.type,
         date: r.date,
         amount: Number(r.amount),
         desc: String(r.desc)
       })).filter(r=>r.id && r.type && r.date && r.amount);
-      // Sort newest first
-      entries.sort((a,b)=>b.id-a.id);
-      syncStatus('ok','✅ Google Sheet से connected');
-    } catch(e){
-      syncStatus('error','⚠️ Sheet load नहीं हुई — offline mode');
-      // fallback to localStorage
+      entries.sort((a,b)=> Number(b.id)-Number(a.id));
+      
+      localStorage.setItem('samajFundBackup', JSON.stringify(entries));
+    } catch(e) {
+      
       entries = JSON.parse(localStorage.getItem('samajFundBackup')||'[]');
     }
     updateSummary();
@@ -316,99 +287,115 @@
   }
 
   // ===== SAVE TO SHEET =====
-  async function saveToSheet(action, payload){
+  async function saveToSheet(action, payload) {
     try {
-      syncStatus('loading','⏳ सेव हो रहा है...');
-      await fetch(SHEET_URL, {
+      
+      const res = await fetch(SHEET_URL, {
         method:'POST',
-        body: JSON.stringify({ action, ...payload })
+        body: JSON.stringify({ action, token: SECRET_TOKEN, ...payload })
       });
-      syncStatus('ok','✅ Google Sheet में सेव हो गया');
-      // backup to localStorage
+      const data = await res.json();
+      if(data.error) throw new Error(data.error);
+      
       localStorage.setItem('samajFundBackup', JSON.stringify(entries));
-    } catch(e){
-      syncStatus('error','⚠️ सेव नहीं हुआ — internet check करें');
+    } catch(e) {
+      
     }
   }
 
   // ===== INIT =====
   (async()=>{
-    await fetch(SHEET_URL, { method:'POST', body: JSON.stringify({action:'init'}) }).catch(()=>{});
+    await fetch(SHEET_URL, {
+      method:'POST',
+      body: JSON.stringify({action:'init', token: SECRET_TOKEN})
+    }).catch(()=>{});
     await loadFromSheet();
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('inc-date').value = today;
     document.getElementById('exp-date').value = today;
   })();
 
-  // ===== BRUTE FORCE =====
-  function getLS(){ return JSON.parse(localStorage.getItem('samajLoginState')||'{"attempts":0,"lockedUntil":0}'); }
-  function setLS(s){ localStorage.setItem('samajLoginState', JSON.stringify(s)); }
-  function isLocked(){
-    const s=getLS();
-    if(s.lockedUntil && Date.now()<s.lockedUntil) return s.lockedUntil;
-    if(s.lockedUntil && Date.now()>=s.lockedUntil) setLS({attempts:0,lockedUntil:0});
-    return false;
-  }
-  let lockTimer=null;
-  function updateLockUI(){
-    const locked=isLocked();
-    const pi=document.getElementById('pinInput'), pb=document.getElementById('pinLoginBtn'), lm=document.getElementById('lockMsg');
-    if(locked){
-      pi.disabled=true; pb.disabled=true;
-      const r=Math.ceil((locked-Date.now())/1000);
-      lm.textContent=`🔒 ${MAX_ATTEMPTS} बार गलत — ${Math.floor(r/60)}:${String(r%60).padStart(2,'0')} बाद try करें`;
-      document.getElementById('pinError').textContent='';
-      lockTimer=setTimeout(updateLockUI,1000);
-    } else {
-      pi.disabled=false; pb.disabled=false; lm.textContent='';
-      if(lockTimer){ clearTimeout(lockTimer); lockTimer=null; }
-    }
-  }
-
-  // ===== ADMIN LOGIN =====
-  function cornerBtnClick(){
+  // ===== ADMIN LOGIN — PIN verified SERVER SIDE =====
+  function cornerBtnClick() {
     if(currentMode==='admin'){ if(confirm('Admin logout karna chahte hain?')) logout(); }
     else openAdminModal();
   }
-  function openAdminModal(){
+  function openAdminModal() {
     document.getElementById('adminModal').classList.add('show');
     document.getElementById('pinInput').value='';
     document.getElementById('pinError').textContent='';
-    updateLockUI();
-    setTimeout(()=>{ if(!isLocked()) document.getElementById('pinInput').focus(); },100);
+    document.getElementById('lockMsg').textContent='';
+    document.getElementById('pinInput').disabled=false;
+    document.getElementById('pinLoginBtn').disabled=false;
+    setTimeout(()=> document.getElementById('pinInput').focus(), 100);
   }
-  function closeAdminModal(){
+  function closeAdminModal() {
     document.getElementById('adminModal').classList.remove('show');
     if(lockTimer){ clearTimeout(lockTimer); lockTimer=null; }
   }
   document.getElementById('adminModal').addEventListener('click',function(e){ if(e.target===this) closeAdminModal(); });
 
-  function doAdminLogin(){
-    if(isLocked()) return;
-    const pin=document.getElementById('pinInput').value;
-    const s=getLS();
-    if(pin===ADMIN_PIN){
-      setLS({attempts:0,lockedUntil:0});
-      closeAdminModal(); enterAdmin();
-    } else {
-      const na=s.attempts+1;
-      if(na>=MAX_ATTEMPTS){
-        setLS({attempts:na,lockedUntil:Date.now()+LOCK_DURATION});
-        updateLockUI();
-      } else {
-        setLS({attempts:na,lockedUntil:0});
-        document.getElementById('pinError').textContent=`❌ गलत PIN! ${MAX_ATTEMPTS-na} कोशिश बाकी`;
+  async function doAdminLogin() {
+    const pin = document.getElementById('pinInput').value;
+    if(!pin) return;
+    document.getElementById('pinLoginBtn').disabled = true;
+    document.getElementById('pinError').textContent = '';
+
+    try {
+      const res = await fetch(SHEET_URL, {
+        method:'POST',
+        body: JSON.stringify({ action:'login', pin })
+      });
+      const data = await res.json();
+
+      if(data.status === 'ok') {
+        sessionToken = data.token;
+        closeAdminModal();
+        enterAdmin();
+      } else if(data.status === 'locked') {
+        startLockCountdown(data.lockedUntil);
+      } else if(data.status === 'wrong') {
+        document.getElementById('pinLoginBtn').disabled = false;
+        document.getElementById('pinInput').value = '';
+        document.getElementById('pinInput').focus();
+        if(data.remaining > 0) {
+          document.getElementById('pinError').textContent = `❌ गलत PIN! ${data.remaining} कोशिश बाकी`;
+        } else {
+          startLockCountdown(data.lockedUntil);
+        }
       }
-      document.getElementById('pinInput').value='';
-      if(!isLocked()) document.getElementById('pinInput').focus();
+    } catch(e) {
+      document.getElementById('pinLoginBtn').disabled = false;
+      document.getElementById('pinError').textContent = '⚠️ Server से connect नहीं हो पाया';
     }
   }
 
-  function enterAdmin(){
+  function startLockCountdown(lockedUntil) {
+    document.getElementById('pinInput').disabled = true;
+    document.getElementById('pinLoginBtn').disabled = true;
+    document.getElementById('pinError').textContent = '';
+    function tick() {
+      const remaining = Math.ceil((lockedUntil - Date.now()) / 1000);
+      if(remaining <= 0) {
+        document.getElementById('lockMsg').textContent = '';
+        document.getElementById('pinInput').disabled = false;
+        document.getElementById('pinLoginBtn').disabled = false;
+        document.getElementById('pinInput').value = '';
+        document.getElementById('pinInput').focus();
+        return;
+      }
+      const m = Math.floor(remaining/60), s = remaining%60;
+      document.getElementById('lockMsg').textContent = `🔒 ${MAX_ATTEMPTS} बार गलत — ${m}:${String(s).padStart(2,'0')} बाद try करें`;
+      lockTimer = setTimeout(tick, 1000);
+    }
+    tick();
+  }
+
+  function enterAdmin() {
     currentMode='admin';
     document.getElementById('modeBadge').textContent='🔐 ADMIN';
     document.getElementById('modeBadge').className='mode-badge admin';
-    document.getElementById('viewerNotice').style.display='none';
+    
     document.getElementById('incFormCard').style.display='block';
     document.getElementById('expFormCard').style.display='block';
     document.getElementById('cornerBtn').classList.add('admin-active');
@@ -416,11 +403,11 @@
     renderList('income'); renderList('expense');
   }
 
-  function logout(){
-    currentMode='viewer';
+  function logout() {
+    currentMode='viewer'; sessionToken=null;
     document.getElementById('modeBadge').textContent='👁️ VIEWER';
     document.getElementById('modeBadge').className='mode-badge viewer';
-    document.getElementById('viewerNotice').style.display='block';
+    
     document.getElementById('incFormCard').style.display='none';
     document.getElementById('expFormCard').style.display='none';
     document.getElementById('cornerBtn').classList.remove('admin-active');
@@ -437,7 +424,6 @@
     return `${parseInt(day)} ${months[parseInt(m)-1]} ${y}`;
   }
   function resetPage(type){ pages[type]=1; }
-
   function switchTab(type){
     document.getElementById('content-income').classList.toggle('active',type==='income');
     document.getElementById('content-expense').classList.toggle('active',type==='expense');
@@ -446,39 +432,47 @@
   }
 
   // ===== ADD ENTRY =====
-  async function addEntry(type){
+  async function addEntry(type) {
     if(currentMode!=='admin'||isSaving) return;
-    const p=type==='income'?'inc':'exp';
-    const date  =document.getElementById(`${p}-date`).value;
-    const amount=parseFloat(document.getElementById(`${p}-amount`).value);
-    const desc  =document.getElementById(`${p}-desc`).value.trim();
+    const p = type==='income'?'inc':'exp';
+    const date   = document.getElementById(`${p}-date`).value;
+    const amount = parseFloat(document.getElementById(`${p}-amount`).value);
+    const desc   = document.getElementById(`${p}-desc`).value.trim();
+
+    // Client-side validation
     if(!date||!amount||amount<=0||!desc){ alert('कृपया तारीख, राशि और विवरण भरें।'); return; }
+    if(amount > 10000000){ alert('राशि बहुत बड़ी है।'); return; }
+    if(desc.length > 200){ alert('विवरण 200 अक्षर से कम होना चाहिए।'); return; }
 
     isSaving=true;
-    document.getElementById(`${type==='income'?'inc':'exp'}AddBtn`).disabled=true;
+    document.getElementById(`${p}AddBtn`).disabled=true;
 
-    const entry={id:Date.now(), type, date, amount, desc};
+    // Safe UUID
+    const id = (typeof crypto !== 'undefined' && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : String(Date.now()) + Math.random().toString(36).slice(2);
+
+    const entry = { id, type, date, amount, desc };
     entries.unshift(entry);
     updateSummary(); renderList(type);
     document.getElementById(`${p}-amount`).value='';
     document.getElementById(`${p}-desc`).value='';
 
-    await saveToSheet('add', {entry});
+    await saveToSheet('add', { entry });
     isSaving=false;
-    document.getElementById(`${type==='income'?'inc':'exp'}AddBtn`).disabled=false;
-
+    document.getElementById(`${p}AddBtn`).disabled=false;
     if(type==='income') openWAModal(entry);
   }
 
   // ===== DELETE ENTRY =====
-  async function deleteEntry(id){
+  async function deleteEntry(id) {
     if(currentMode!=='admin') return;
     if(!confirm('क्या आप यह एंट्री हटाना चाहते हैं?')) return;
-    const e=entries.find(x=>x.id===id);
-    entries=entries.filter(x=>x.id!==id);
+    const e = entries.find(x=>x.id===id);
+    entries = entries.filter(x=>x.id!==id);
     updateSummary();
     if(e) renderList(e.type);
-    await saveToSheet('delete',{id});
+    await saveToSheet('delete', { id });
   }
 
   // ===== SUMMARY =====
@@ -489,15 +483,14 @@
     document.getElementById('totalExpense').textContent=fmt(exp);
     const bal=inc-exp;
     const el=document.getElementById('balance');
-    el.textContent=fmt(bal);
-    el.style.color=bal>=0?'#1a56db':'#c0392b';
-    const incAll=entries.filter(e=>e.type==='income');
-    const expAll=entries.filter(e=>e.type==='expense');
-    document.getElementById('inc-count').textContent=incAll.length?`(${incAll.length})`:'';
-    document.getElementById('exp-count').textContent=expAll.length?`(${expAll.length})`:'';
+    el.textContent=fmt(bal); el.style.color=bal>=0?'#1a56db':'#c0392b';
+    const ia=entries.filter(e=>e.type==='income');
+    const ea=entries.filter(e=>e.type==='expense');
+    document.getElementById('inc-count').textContent=ia.length?`(${ia.length})`:'';
+    document.getElementById('exp-count').textContent=ea.length?`(${ea.length})`:'';
   }
 
-  // ===== RENDER LIST + PAGINATION =====
+  // ===== RENDER LIST =====
   function renderList(type){
     const listEl=document.getElementById(type==='income'?'inc-list':'exp-list');
     const pgEl  =document.getElementById(type==='income'?'inc-pagination':'exp-pagination');
@@ -518,18 +511,19 @@
 
     listEl.innerHTML=pageData.map(e=>{
       const serial=allOfType.length-allOfType.findIndex(x=>x.id===e.id);
+      const entryJson=esc(JSON.stringify(e));
       return `
       <div class="tx-item">
         <div class="tx-serial">#${serial}</div>
         <div class="tx-icon ${e.type}">${e.type==='income'?'⬆️':'⬇️'}</div>
         <div class="tx-info">
-          <div class="tx-desc">${e.desc}</div>
-          <div class="tx-meta">${fmtDate(e.date)}</div>
+          <div class="tx-desc">${esc(e.desc)}</div>
+          <div class="tx-meta">${esc(fmtDate(e.date))}</div>
         </div>
         <div class="tx-amount ${e.type}">${e.type==='income'?'+':'-'}${fmt(e.amount)}</div>
         <div class="tx-actions">
-          ${e.type==='income'?`<button class="tx-wa" title="WhatsApp रसीद" onclick='openWAModal(${JSON.stringify(e)})'>📲</button>`:''}
-          ${currentMode==='admin'?`<button class="tx-delete" onclick="deleteEntry(${e.id})">🗑️</button>`:''}
+          ${currentMode==='admin' && e.type==='income' ? `<button class="tx-wa" title="WhatsApp रसीद" onclick='openWAModal(JSON.parse(this.dataset.e))' data-e='${entryJson}'>📲</button>` : ''}
+          ${currentMode==='admin'?`<button class="tx-delete" onclick="deleteEntry('${esc(e.id)}')">🗑️</button>`:''}
         </div>
       </div>`;
     }).join('');
@@ -567,6 +561,9 @@
 ─────────────────────
 📝 ${entry.desc}
 ─────────────────────
+🔗 *हिसाब देखें:*
+https://meghwalsamaj.github.io/index/
+─────────────────────
 🙏 *धन्यवाद*
 _मेघवाल समाज दसौरिया, गरोठ_`;
     document.getElementById('waPreview').textContent=rasid;
@@ -589,6 +586,9 @@ _मेघवाल समाज दसौरिया, गरोठ_`;
 ─────────────────────
 📝 ${entry.desc}
 ─────────────────────
+🔗 *हिसाब देखें:*
+https://meghwalsamaj.github.io/index/
+─────────────────────
 🙏 *धन्यवाद*
 _मेघवाल समाज दसौरिया, गरोठ_`;
     window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`,'_blank');
@@ -601,7 +601,7 @@ _मेघवाल समाज दसौरिया, गरोठ_`;
     const exp=entries.filter(e=>e.type==='expense').reduce((s,e)=>s+e.amount,0);
     const incList=entries.filter(e=>e.type==='income');
     const expList=entries.filter(e=>e.type==='expense');
-    const row=(e,i,type,total)=>`<tr><td>${total-i}</td><td>${fmtDate(e.date)}</td><td>${e.desc}</td>
+    const row=(e,i,type,total)=>`<tr><td>${total-i}</td><td>${fmtDate(e.date)}</td><td>${esc(e.desc)}</td>
       <td style="color:${type==='income'?'#1b8a4a':'#c0392b'};font-weight:700">${type==='income'?'+':'-'}₹${e.amount.toLocaleString('hi-IN')}</td></tr>`;
     const incRows=incList.map((e,i)=>row(e,i,'income',incList.length)).join('')||'<tr><td colspan="4" style="text-align:center;color:#999">कोई आय नहीं</td></tr>';
     const expRows=expList.map((e,i)=>row(e,i,'expense',expList.length)).join('')||'<tr><td colspan="4" style="text-align:center;color:#999">कोई व्यय नहीं</td></tr>';
