@@ -237,7 +237,7 @@
 
 <script>
   // ===== CONFIG =====
-  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyHFf3iVHd8ryxt1QJ9DfWJoLiAOlU_cgBaIp5G0IK7zY21Ti5eRlzTojZqPb6vHACb/exec';
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwl4PoboEXoKrHPHFOr6PgY5G3ho3h3tePrC2Dwj1L8Rci3Tctu1Kf5RWS1CeiBSWg0Jg/exec';
   const SECRET_TOKEN = 'mgw_secret_2026'; // Same as Apps Script
   const PAGE_SIZE = 50;
   const MAX_ATTEMPTS = 5;
@@ -271,9 +271,18 @@
         type: r.type,
         date: r.date,
         amount: Number(r.amount),
-        desc: String(r.desc)
+        desc: String(r.desc),
+        ts: Number(r.ts)||0
       })).filter(r=>r.id && r.type && r.date && r.amount);
-      entries.sort((a,b)=> Number(b.id)-Number(a.id));
+      entries.sort((a,b)=>{
+        const ta = Number(a.ts)||0, tb = Number(b.ts)||0;
+        if(ta && tb) return tb - ta;
+        if(ta && !tb) return -1;
+        if(!ta && tb) return 1;
+        // fallback: date descending, then id descending
+        if(b.date !== a.date) return b.date.localeCompare(a.date);
+        return String(b.id).localeCompare(String(a.id));
+      });
       
       localStorage.setItem('samajFundBackup', JSON.stringify(entries));
     } catch(e) {
@@ -452,7 +461,8 @@
       ? crypto.randomUUID()
       : String(Date.now()) + Math.random().toString(36).slice(2);
 
-    const entry = { id, type, date, amount, desc };
+    const ts = Date.now();
+    const entry = { id, type, date, amount, desc, ts };
     entries.unshift(entry);
     updateSummary(); renderList(type);
     document.getElementById(`${p}-amount`).value='';
